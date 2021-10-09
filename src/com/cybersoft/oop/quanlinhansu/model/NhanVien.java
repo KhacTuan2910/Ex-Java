@@ -9,9 +9,9 @@ public class NhanVien extends NhanSu {
 	}
 
 	public NhanVien(String hoTen, String soDienThoai
-			, int soNgayLam, float luongMotNgay) {
-		super(hoTen, soDienThoai, soNgayLam, luongMotNgay);
-		this.luongMotNgay=100;
+			, int soNgayLam) {
+		super(hoTen, soDienThoai, soNgayLam);
+		this.luongMotNgay = 100;
 	}
 	
 	

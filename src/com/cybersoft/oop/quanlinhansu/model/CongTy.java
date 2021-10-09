@@ -11,6 +11,13 @@ public class CongTy {
 		doanhThuThang = 0.0;
 	}
 
+	public CongTy(String ten, String maSoThue, double doanhThuThang) {
+		super();
+		this.ten = ten;
+		this.maSoThue = maSoThue;
+		this.doanhThuThang = doanhThuThang;
+	}
+
 	public String getTen() {
 		return ten;
 	}
@@ -33,6 +40,11 @@ public class CongTy {
 
 	public void setDoanhThuThang(double doanhThuThang) {
 		this.doanhThuThang = doanhThuThang;
+	}
+
+	@Override
+	public String toString() {
+		return "Tên công ty: " + ten + "\nMã Số Thuế: " + maSoThue + "\nDoanh Thu Thang: " + doanhThuThang + "\n";
 	}
 	
 	

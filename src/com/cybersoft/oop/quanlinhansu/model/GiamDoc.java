@@ -8,13 +8,13 @@ public class GiamDoc extends NhanSu {
 		this.luongMotNgay = 300;
 	}
 
-	public GiamDoc(String hoTen, String soDienThoai, int soNgayLam, float luongMotNgay) {
-		super(hoTen, soDienThoai, soNgayLam, luongMotNgay);
+	public GiamDoc(String hoTen, String soDienThoai, int soNgayLam) {
+		super(hoTen, soDienThoai, soNgayLam);
 		this.luongMotNgay = 300;
 	}
 	
-	public GiamDoc(String hoTen, String soDienThoai, int soNgayLam, float luongMotNgay,float coPhan) {
-		super(hoTen, soDienThoai, soNgayLam, luongMotNgay);
+	public GiamDoc(String hoTen, String soDienThoai, int soNgayLam, float coPhan) {
+		super(hoTen, soDienThoai, soNgayLam);
 		this.coPhan = coPhan;
 		this.luongMotNgay = 300;
 	}

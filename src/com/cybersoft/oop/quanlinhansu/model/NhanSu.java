@@ -14,12 +14,11 @@ public abstract class NhanSu {
 		id = STT++;
 	}
 	
-	public NhanSu(String hoTen, String soDienThoai, int soNgayLam, float luongMotNgay) {
+	public NhanSu(String hoTen, String soDienThoai, int soNgayLam) {
 		this.id = STT++;
 		this.hoTen = hoTen;
 		this.soDienThoai = soDienThoai;
 		this.soNgayLam = soNgayLam;
-		this.luongMotNgay = luongMotNgay;
 	}
 	
 	/* getters/setters */
@@ -35,7 +34,7 @@ public abstract class NhanSu {
 		return soDienThoai;
 	}
 
-	public float getSoNgayLam() {
+	public int getSoNgayLam() {
 		return soNgayLam;
 	}
 
@@ -45,7 +44,7 @@ public abstract class NhanSu {
 	
 //	methods
 	public float tinhLuong() {
-		return soNgayLam * luongMotNgay;
+		return Math.round(soNgayLam * luongMotNgay * 100) / 100;
 	}
 	
 	public abstract String getChucVu();
