@@ -15,6 +15,16 @@ public class MainProgram {
 		CongTy cty = new CongTy();
 		ArrayList<NhanSu> dsNhanSu = new ArrayList();
 		
+		NhanVien tung = new NhanVien("Tùng", "095236502", 21);
+		dsNhanSu.add(tung);
+		NhanVien trung = new NhanVien("Trung", "085236502", 20);
+		dsNhanSu.add(trung);
+		TruongPhong dao = new TruongPhong("Trần Thế Đạo", "0923536502", 28);
+		dsNhanSu.add(dao);
+		GiamDoc kien = new GiamDoc("Lê Trung Kiên", "095236502", 30, 52.1f);
+		dsNhanSu.add(kien);
+		
+		
 		var choice = 0;
 		var input = new Scanner(System.in);
 		do {
@@ -40,7 +50,8 @@ public class MainProgram {
 				showFullInfoCompany(dsNhanSu);
 				break;
 			case 6:
-				tinhTongLuong(dsNhanSu);
+				var tongLuong = tinhTongLuong(dsNhanSu);
+				System.out.println("Tổng lương: " + tongLuong);
 				break;
 			default:
 				System.out.println("Vui lòng chọn lại!!");
@@ -48,7 +59,7 @@ public class MainProgram {
 		} while(choice != 0);
 	}
 		
-	private static void tinhTongLuong(ArrayList<NhanSu> dsNhanSu) {
+	private static float tinhTongLuong(ArrayList<NhanSu> dsNhanSu) {
 		var sum = 0.0f;
 		if (dsNhanSu.size() > 0) {
             for (var nhanSu : dsNhanSu) {
@@ -57,7 +68,7 @@ public class MainProgram {
         } else {
             System.out.println("==> Danh sách nhân sự rỗng <==");
         }
-		System.out.println("Tổng lương: " + sum);
+		return sum;
 	}
 
 	private static void themNhanSu(Scanner input, ArrayList<NhanSu> dsNhanSu) {
@@ -128,6 +139,9 @@ public class MainProgram {
             	showInfo(nhanSu);
             	System.out.println("----------------------------------------------------------------------------------------------");
             }
+            System.out.printf("| %76s | %-12.2f|\n",
+                    "Tổng lương", tinhTongLuong(dsNhanSu));
+            System.out.println("==============================================================================================");
         } else {
             System.out.println("==> Danh sách nhân sự rỗng <==");
         }
