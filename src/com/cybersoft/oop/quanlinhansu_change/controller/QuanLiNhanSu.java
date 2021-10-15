@@ -66,12 +66,50 @@ public class QuanLiNhanSu {
 	}
 	
 	public boolean xoaNhanSu(String maSo) {
-		/*
-		 * TODO: xoa nhan su
-		 */
-		return false;
+		khoiTaoDsTruongPhong();
+		var isSuccess = false;
+		var ns = timNhanSu(maSo);
+		if (ns != null) {
+			if (ns instanceof TruongPhong) {
+				for (NhanSu nhanSu : dsNhanSu) {
+//					var nv = ((NhanVien) nhanSu); 
+					if (nhanSu instanceof NhanVien && ((NhanVien) nhanSu).getTruongPhong() != null) {
+						if (((NhanVien) nhanSu).getTruongPhong().getMaSo().equalsIgnoreCase(maSo)) {
+							((NhanVien) nhanSu).setTruongPhong(null);
+						}
+					}
+				}
+				dsNhanSu.remove(ns);
+				dsTruongPhong.remove(ns);
+			} else if (ns instanceof NhanVien) {
+				var truongPhongCuaNhanVien = ((NhanVien) ns).getTruongPhong();
+				if (truongPhongCuaNhanVien != null) {
+					var maSoTruongPhong = truongPhongCuaNhanVien.getMaSo();
+					for (TruongPhong tp : dsTruongPhong) {
+						if (tp.getMaSo().equalsIgnoreCase(maSoTruongPhong)) {
+							tp.giamSoNhanVien();
+							break;
+						}
+					}
+				}
+				dsNhanSu.remove(ns);
+			} else { // ns instanceof GiamDoc
+				dsNhanSu.remove(ns);
+			}
+			isSuccess = true;
+		}
+		return isSuccess;
 	}
 	
+	private NhanSu timNhanSu(String maSo) {
+		for (NhanSu nhanSu : dsNhanSu) {
+			if (nhanSu.getMaSo().equalsIgnoreCase(maSo)) {
+				return nhanSu;
+			}
+		}
+		return null;
+	}
+
 	public void inDanhSachNhanSu() {
 		System.out.println("Danh sách nhân sự: ");
 		inDanhSach(dsNhanSu);

@@ -65,7 +65,7 @@ public class QuanLiNhanSuConsole {
 			themNhanSu();
 			break;
 		case 4:
-			
+			xoaNhanSu();
 			break;
 		case 5:
 			quanLiNhanSuCore.inDanhSachNhanSu();
@@ -93,6 +93,18 @@ public class QuanLiNhanSuConsole {
 			break;
 		default:
 			System.out.println("Vui lòng chọn đúng chức năng!");
+		}
+	}
+
+	private static void xoaNhanSu() {
+		String maSo = "";
+		System.out.print("Mã số nhân sự muốn xóa: ");
+		maSo = scanner.nextLine();
+		var isSuccess = quanLiNhanSuCore.xoaNhanSu(maSo);
+		if (isSuccess) {
+			System.out.println("==> Xóa thành công <==");				
+		} else {
+			System.out.println("==> Xóa thất bại <==");		
 		}
 	}
 

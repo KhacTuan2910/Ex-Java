@@ -2,22 +2,21 @@ package com.cybersoft.oop.quanlinhansu_change.model;
 
 public class NhanVien extends NhanSu {
 	/* properties */
-	private TruongPhong truongPhong = new TruongPhong();
+	private TruongPhong truongPhong;
 	
 	/* constructor */
+	public NhanVien() {
+		super();
+	}
+
 	public NhanVien(String hoTen, String soDienthoai, float soNgayLamViec) {
 		super(hoTen, soDienthoai, soNgayLamViec);
-		// TODO Auto-generated constructor stub
+		// TODO Auto-generated constructor stub 
 	}	
 	
 	/* getters/setters */
 	public TruongPhong getTruongPhong() {
 		return truongPhong;
-	}
-
-
-	public NhanVien() {
-		super();
 	}
 
 	public void setTruongPhong(TruongPhong truongPhong) {
@@ -39,7 +38,10 @@ public class NhanVien extends NhanSu {
 	@Override
 	public void xuatThongTin() {
 		super.xuatThongTin();
-		System.out.printf("%-18s: %s\n", "Mã số trưởng phòng", this.truongPhong.getMaSo());
+		if (truongPhong != null) {
+			System.out.printf("%-18s: %s\n", "Mã số trưởng phòng", this.truongPhong.getMaSo());			
+		} else 
+			System.out.printf("%-18s: %s\n", "Mã số trưởng phòng", null);		
 	}
 	
 }

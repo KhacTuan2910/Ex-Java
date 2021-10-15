@@ -41,6 +41,10 @@ public class TruongPhong extends NhanSu {
 		this.soNhanVien++;
 	}
 	
+	public void giamSoNhanVien() {
+		this.soNhanVien--;
+	}
+	
 	@Override
 	public String getChucVu() {
 		// TODO Auto-generated method stub
