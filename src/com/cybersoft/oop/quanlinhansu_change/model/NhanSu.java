@@ -19,9 +19,23 @@ public abstract class NhanSu implements NhapXuat {
 		maSo = "NS" + STT++;
 	}
 	
+	public NhanSu(String hoTen, String soDienthoai, float soNgayLamViec) {
+		super();
+		maSo = "NS" + STT++;
+		this.hoTen = hoTen;
+		this.soDienthoai = soDienthoai;
+		this.soNgayLamViec = soNgayLamViec;
+		this.luongMotNgay = this.getLuong();
+	}
+
+
+
 	/* getters/setters */
 	public String getMaSo() {
-		return maSo;
+		if (this.hoTen != null) {
+			return maSo;			
+		}
+		return null;
 	}
 	
 	public String getHoTen() {

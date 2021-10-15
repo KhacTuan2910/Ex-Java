@@ -4,9 +4,23 @@ public class TruongPhong extends NhanSu {
 	/* properties */
 	private int soNhanVien;
 
+
 	/* constructor */
+	public TruongPhong() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public TruongPhong(String hoTen, String soDienthoai, float soNgayLamViec) {
+		super(hoTen, soDienthoai, soNgayLamViec);
+		// TODO Auto-generated constructor stub
+	}
 	
 	/* getters/setters */
+	
+	public int getSoNhanVien() {
+		return this.soNhanVien;
+	}
 	
 	/* methods */
 	public boolean themNhanVien(NhanVien nv){
@@ -23,6 +37,10 @@ public class TruongPhong extends NhanSu {
 		return false;
 	}
 	
+	public void tangSoNhanVien() {
+		this.soNhanVien++;
+	}
+	
 	@Override
 	public String getChucVu() {
 		// TODO Auto-generated method stub
@@ -32,5 +50,11 @@ public class TruongPhong extends NhanSu {
 	@Override
 	protected float getLuong() {
 		return 200f;
+	}
+	
+	@Override
+	public void xuatThongTin() {
+		super.xuatThongTin();
+		System.out.printf("%-18s: %d\n", "Số nhân viên",this.soNhanVien);
 	}
 }

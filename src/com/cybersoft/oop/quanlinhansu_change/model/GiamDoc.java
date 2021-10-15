@@ -9,15 +9,30 @@ public class GiamDoc extends NhanSu {
 	private float coPhan;
 
 	/* constructor */
+	public GiamDoc() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public GiamDoc(String hoTen, String soDienthoai, float soNgayLamViec, float coPhan) {
+		super(hoTen, soDienthoai, soNgayLamViec);
+		this.coPhan = coPhan;
+	}
+
 	/* getters/setters */
+	public float getCoPhan() {
+		return coPhan/100;
+	}
+	
 	/* methods */
+	
 	@Override
 	public String getChucVu() {
 		return "Giám đốc";
 	}
-	
+
 	@Override
-	protected float getLuong() {
+	public float getLuong() {
 		return 300f;
 	}
 	

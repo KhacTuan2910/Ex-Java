@@ -59,6 +59,7 @@ public class QuanLiNhanSuConsole {
 			quanLiNhanSuCore.nhapThongTinCongTy(scanner);
 			break;
 		case 2:
+			quanLiNhanSuCore.phanBoNhanVien(scanner);
 			break;
 		case 3: // Thêm nhân sự
 			themNhanSu();
@@ -71,21 +72,24 @@ public class QuanLiNhanSuConsole {
 			break;
 		case 6:
 			System.out.println("Tổng lương của toàn công ty: " + quanLiNhanSuCore.tinhTongLuong());
-			
 			break;
 		case 7:
 			quanLiNhanSuCore.nhanVienLuongCaoNhat();
 			break;
 		case 8:
+			quanLiNhanSuCore.timTruongPhongNhieuNhanVien();
 			break;
 		case 9:
 			quanLiNhanSuCore.sapXepNhanSuTheoTen();
 			break;
 		case 10:
+			quanLiNhanSuCore.sapXepNhanSuTheoLuongDESC();
 			break;
 		case 11:
+			quanLiNhanSuCore.timGiamDocNhieuCoPhanNhat();
 			break;
 		case 12:
+			quanLiNhanSuCore.thuNhapGiamDoc();
 			break;
 		default:
 			System.out.println("Vui lòng chọn đúng chức năng!");

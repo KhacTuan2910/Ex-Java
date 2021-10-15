@@ -13,6 +13,9 @@ public class CongTy implements NhapXuat {
 
 	/* constructor */
 	/* getters/setters */
+	public double getDoanhThuThang() {
+		return this.doanhThuThang;
+	}
 	
 	/* methods */
 
